@@ -5,16 +5,14 @@
     <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js" ></script>
     <style>
       #preview {
-        -moz-transform: scaleX(-1);
-        -o-transform: scaleX(-1);
-        -webkit-transform: scaleX(-1);
-        transform: scaleX(-1);
+        width: 100%;
+        height: auto;
       }
     </style>
   </head>
 
   <body>
-    <video id="preview"  width="100vh" height="100vh"></video>
+    <video id="preview"></video>
     <script>
         let scanner = new Instascan.Scanner(
             {
