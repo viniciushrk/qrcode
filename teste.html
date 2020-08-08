@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!--    <script src="https://raw.githubusercontent.com/mebjas/html5-qrcode/master/minified/html5-qrcode.min.js"></script>-->
+    <script src="html5-qrcode.min.js"></script>
+</head>
+<body>
+<div style="width: 500px" id="reader"></div>
+</body>
+<script>
+    function onScanSuccess(qrCodeMessage) {
+        // handle on success condition with the decoded message
+        console.log(`QR matched = ${qrMessage}`)
+    }
+    function onScanFailure(error) {
+        // handle scan failure, usually better to ignore and keep scanning
+        console.warn(`QR error = ${error}`);
+    }
+    Html5Qrcode.getCameras().then(devices => {
+        /**
+         * devices would be an array of objects of type:
+         * { id: "id", label: "label" }
+         */
+        if (devices && devices.length) {
+            var cameraId = devices[0].id;
+            // .. use this to start scanning.
+        }
+    }).catch(err => {
+        // handle err
+    });
+
+    var html5QrcodeScanner = new Html5QrcodeScanner(
+        "reader", { fps: 10, qrbox: 250 });
+    html5QrcodeScanner.render(onScanSuccess);
+</script>
+</html>
