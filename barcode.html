@@ -24,8 +24,7 @@
                 target: document.querySelector('#camera')    // Or '#yourElement' (optional)
             },
             decoder: {
-                readers: ["code_128_reader",'ean_reader','ean_8_reader','code_39_reader','code_39_vin_reader','codabar_reader'
-                ,]
+                readers: ["code_128_reader",]
             }
         }, function (err) {
             if (err) {
